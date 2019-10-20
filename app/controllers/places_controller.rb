@@ -10,12 +10,15 @@ class PlacesController < ApplicationController
   end
 
   def create 
-
     current_user.places.create(place_params)
     redirect_to root_path
   end
 
   def show
+    @place = Place.find(params[:id])
+  end
+
+  def edit
     @place = Place.find(params[:id])
   end
 
@@ -27,9 +30,6 @@ class PlacesController < ApplicationController
   
 end
 
-# do course work 
-# send email to brian to cut me a new check 
-# look into financial aid for seton 
 
 
 
